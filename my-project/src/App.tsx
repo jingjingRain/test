@@ -22,13 +22,9 @@ const App = () => {
     <Router>
       <div>
         <Link to="/first"> 页面一 </Link>
-        {/* 指定路由出口 */}
+        <Link to="/second"> 页面二 </Link>
         <Routes>
           <Route path="/first" element={<MantineStyles />}></Route>
-        </Routes>
-        <Link to="/second"> 页面二 </Link>
-        {/* 指定路由出口 */}
-        <Routes>
           <Route path="/second" element={<MobxDemo />}></Route>
         </Routes>
       </div>
