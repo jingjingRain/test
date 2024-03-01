@@ -1,7 +1,6 @@
 import React, { Component, useState } from 'react';
 import '../App';
 import '@mantine/core/styles.css';
-import { createTheme, MantineProvider, Button } from '@mantine/core';
 const CompA = () => {
   const [count, setCount] = useState(0);
   return (
@@ -21,5 +20,11 @@ class CompB extends Component<IProps, any> {
     return <h1>Count from CompA{this.props.count}</h1>
   }
 }
+// function CompB(props: any) {
+//   return  <div>
+//       <h2>CompB</h2>
+//       <p>Count from CompA: {props.count}</p>
+//     </div>
+// }
 
 export default CompA;

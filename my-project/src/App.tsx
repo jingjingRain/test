@@ -21,7 +21,7 @@ const App = () => {
   return (
     <Router>
       <div>
-        <Link to="/first"> 页面一 </Link>
+        <Link to="/first"> 页面一  </Link>
         <Link to="/second"> 页面二 </Link>
         <Routes>
           <Route path="/first" element={<MantineStyles />}></Route>

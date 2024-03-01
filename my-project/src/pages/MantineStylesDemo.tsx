@@ -6,13 +6,13 @@ const Demo1 = () => {
     <div>
       <Button
         style={{
-          backgroundColor: "blue",
+          backgroundColor: "red",
           color: "white",
           padding: "10px 20px",
           borderRadius: "5px",
         }}
       >
-        Click me
+       样式button
       </Button>
     </div>
   );
