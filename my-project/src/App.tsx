@@ -1,8 +1,10 @@
 import React, { Component, useState } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { createTheme, MantineProvider, Button } from '@mantine/core';
 import './App.css';
 import '@mantine/core/styles.css';
-import { createTheme, MantineProvider,Button } from '@mantine/core';
+import MantineStyles from './pages/MantineStylesDemo'
+import MobxDemo from './pages/MobxDemo'
 
 const theme = createTheme({
   /** Put your mantine theme override here */
@@ -17,38 +19,22 @@ function Demo() {
 }
 const App = () => {
   return (
-    <div>
-      <Button
-        style={{
-          backgroundColor: "blue",
-          color: "white",
-          padding: "10px 20px",
-          borderRadius: "5px",
-        }}
-      >
-        Click me
-      </Button>
-    </div>
+    <Router>
+      <div>
+        <Link to="/first"> 页面一 </Link>
+        {/* 指定路由出口 */}
+        <Routes>
+          <Route path="/first" element={<MantineStyles />}></Route>
+        </Routes>
+        <Link to="/second"> 页面二 </Link>
+        {/* 指定路由出口 */}
+        <Routes>
+          <Route path="/second" element={<MobxDemo />}></Route>
+        </Routes>
+      </div>
+    </Router>
   );
-};
-const CompA = () => {
-  const [count, setCount] = useState(0);
-  return (
-    <div>
-      <h2>CompA</h2>
-      <p>Count: {count}</p>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-      <CompB count={count} />
-    </div>
-  );
-};
-interface IProps {
-  count: number
-}
-class CompB extends Component<IProps, any> {
-  render() {
-    return <h1>Count from CompA{this.props.count}</h1>
-  }
 }
 
-export default CompA;
+
+export default Demo;
